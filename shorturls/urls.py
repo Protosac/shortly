@@ -16,7 +16,10 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+from core.views import url_redirect
+
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    # url(r'^/'),
+    url(r'^(?P<uid>[A-Za-z0-9]{8})$', url_redirect, name='url'),
 ]
